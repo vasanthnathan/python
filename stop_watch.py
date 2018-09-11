@@ -15,7 +15,7 @@ def main():
   args = vars(parser.parse_args())
   time_limit = args['limit'] * 60 # Converting to mins
 
-  mins = 0
+  secs = 0
   """
     CURSOR_UP_ONE, ERASE_LINE helps to delete the last printed line
   """
@@ -24,20 +24,17 @@ def main():
   start_time = time.time()
   is_interupted = False
   print('Start time: {}'.format(time.ctime()))
-  while mins != time_limit:
+  while secs != time_limit:
       try:
           print ("Timer: {}".format(mins))
           sys.stdout.write(CURSOR_UP_ONE)
           sys.stdout.write(ERASE_LINE)
-          # Sleep for a minute
           time.sleep(1)
-          # Increment the minute total
-          mins += 1
+          # Increment the secs
+          secs += 1
       except KeyboardInterrupt:
           is_interupted = True
-          # print_result(start_time)
           break
- 
   print_result(start_time)
 
 def print_result(start_time):
