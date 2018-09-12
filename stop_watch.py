@@ -26,7 +26,7 @@ def main():
   print('Start time: {}'.format(time.ctime()))
   while secs != time_limit:
       try:
-          print ("Timer: {}".format(mins))
+          print ("Timer: {}".format(secs))
           sys.stdout.write(CURSOR_UP_ONE)
           sys.stdout.write(ERASE_LINE)
           time.sleep(1)
